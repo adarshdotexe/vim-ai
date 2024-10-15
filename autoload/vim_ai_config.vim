@@ -3,8 +3,8 @@ let s:plugin_root = expand('<sfile>:p:h:h')
 let g:vim_ai_complete_default = {
 \  "engine": "complete",
 \  "options": {
-\    "model": "gpt-3.5-turbo-instruct",
-\    "endpoint_url": "https://api.openai.com/v1/completions",
+\    "model": "meta/llama-3.1-405b-instruct",
+\    "endpoint_url": "https://integrate.api.nvidia.com/v1/completions",
 \    "max_tokens": 1000,
 \    "temperature": 0.1,
 \    "request_timeout": 20,
@@ -18,8 +18,8 @@ let g:vim_ai_complete_default = {
 let g:vim_ai_edit_default = {
 \  "engine": "complete",
 \  "options": {
-\    "model": "gpt-3.5-turbo-instruct",
-\    "endpoint_url": "https://api.openai.com/v1/completions",
+\    "model": "meta/llama-3.1-405b-instruct",
+\    "endpoint_url": "https://integrate.api.nvidia.com/v1/completions",
 \    "max_tokens": 1000,
 \    "temperature": 0.1,
 \    "request_timeout": 20,
@@ -34,13 +34,13 @@ let g:vim_ai_edit_default = {
 let s:initial_chat_prompt =<< trim END
 >>> system
 
-You are a general assistant.
+You are a knowledgeable, efficient, and direct AI assistant. Provide concise answers, focusing on the key information needed. Offer suggestions tactfully when appropriate to improve outcomes. Engage in productive collaboration with the user.
 If you attach a code block add syntax type after ``` to enable syntax highlighting.
 END
 let g:vim_ai_chat_default = {
 \  "options": {
-\    "model": "gpt-4o",
-\    "endpoint_url": "https://api.openai.com/v1/chat/completions",
+\    "model": "meta/llama-3.1-405b-instruct",
+\    "endpoint_url": "https://integrate.api.nvidia.com/v1/chat/completions",
 \    "max_tokens": 0,
 \    "temperature": 1,
 \    "request_timeout": 20,
@@ -49,7 +49,7 @@ let g:vim_ai_chat_default = {
 \    "initial_prompt": s:initial_chat_prompt,
 \  },
 \  "ui": {
-\    "open_chat_command": "preset_below",
+\    "open_chat_command": "preset_right",
 \    "scratch_buffer_keep_open": 0,
 \    "populate_options": 0,
 \    "code_syntax_enabled": 1,
