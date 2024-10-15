@@ -21,7 +21,7 @@ class KnownError(Exception):
 
 def load_api_key():
     config_file_path = os.path.expanduser(vim.eval("g:vim_ai_token_file_path"))
-    api_key_param_value = os.getenv("OPENAI_API_KEY")
+    api_key_param_value = os.getenv("NVIDIA_AI_API_KEY")
     try:
         with open(config_file_path, 'r') as file:
             api_key_param_value = file.read()
