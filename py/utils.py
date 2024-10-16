@@ -21,7 +21,7 @@ class KnownError(Exception):
 
 def load_api_key():
     config_file_path = os.path.expanduser(vim.eval("g:vim_ai_token_file_path"))
-    api_key_param_value = os.getenv("NVIDIA_AI_API_KEY")
+    api_key_param_value = os.getenv("NVIDIA_API_KEY")
     try:
         with open(config_file_path, 'r') as file:
             api_key_param_value = file.read()
@@ -29,7 +29,7 @@ def load_api_key():
         pass
 
     if not api_key_param_value:
-        raise KnownError("Missing OpenAI API key")
+        raise KnownError("Missing NVIDIA API key! Update your NVIDIA_API_KEY environment variable")
 
     # The text is in format of "<api key>,<org id>" and the
     # <org id> part is optional
